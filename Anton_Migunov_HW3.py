@@ -40,10 +40,6 @@ def main_2():
 """
 
 
-def conformity_check(num: str):
-    return True if num.isdigit() else False
-
-
 def is_prime(num: int):
     for divider in range(1, round(num ** 0.5)+1):
         if num % divider == 0 and divider != 1 and divider != num:
@@ -54,7 +50,7 @@ def is_prime(num: int):
 
 def main_3():
     user_num = input('You should put a positive integer number here: ')
-    if conformity_check(user_num):
+    if user_num.isdigit():
         print(is_prime(int(user_num)))
     else:
         print('Try not to upset me next time...')
@@ -78,8 +74,9 @@ parse("iiisdoso")  ==>  [8, 64] <- это как пример
 """
 
 
-def parse(num: int, command_string: str):
+def parse(command_string: str):
     result = []
+    num = 0
     for command in command_string:
         if command == 'i':
             num += 1
@@ -92,7 +89,7 @@ def parse(num: int, command_string: str):
     return result
 
 
-# print(parse(0, 'iidodsoiioddo'))
+# print(parse('iidodsoiioddo'))
 
 
 """
