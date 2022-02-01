@@ -37,7 +37,9 @@ def main():
         while game:
             print(f"\n\tTurn {turn}: ")
             for player in game_players:
+
                 player_guess = input(f"Now is your turn, player {player}. Make a guess: ")
+
                 if player_guess.isdigit():
                     if int(player_guess) == goal_number:
                         print(f"You are right! Winner is player {player}."
@@ -52,6 +54,7 @@ def main():
                         total_guesses_count += 1
                 else:
                     print("You missed your turn! Next time enter integer number.")
+
             turn += 1
 
     else:
