@@ -59,6 +59,7 @@ class Grandma(Hero):
             return kolobok
         else:
             print(f"{self.name} need more flour.") if self.flour_amount == 1 else print("Some flour is required.")
+            raise ValueError
 
     def gather_flour(self):
         print(f"{self.name} is gathering flour.")
@@ -81,9 +82,10 @@ def tale():
     while kolobok is None:
         try:
             kolobok = grandma.bake()
-            kolobok.move()
-        except AttributeError:
+        except ValueError:
             grandma.gather_flour()
+        else:
+            kolobok.move()
 
     animal_names = ["Hare", "Wolf", "Bear", "Fox", "Dinosaur"]
     for name in animal_names:
