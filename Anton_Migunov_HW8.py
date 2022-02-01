@@ -85,7 +85,7 @@ def tale():
         except AttributeError:
             grandma.gather_flour()
 
-    animal_names = ["Hare", "Wolf", "Bear", "Fox"]
+    animal_names = ["Hare", "Wolf", "Bear", "Fox", "Dinosaur"]
     for name in animal_names:
         animal = Animal(name)
         kolobok.meet(animal)
