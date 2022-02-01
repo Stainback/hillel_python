@@ -89,6 +89,8 @@ def tale():
     for name in animal_names:
         animal = Animal(name)
         kolobok.meet(animal)
+        if not kolobok.is_alive:
+            break
 
 
 if __name__ == "__main__":
