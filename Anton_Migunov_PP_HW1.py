@@ -92,7 +92,6 @@ class Equation:
         if brackets_stack != []:
             raise ValueError("Unbalanced brackets.")
 
-
     def decompose_plain_string(self):
         decomposed_string = []
         cursor = 0
@@ -108,7 +107,8 @@ class Equation:
 
         return decomposed_string
 
-    def group_string_elements(self, decomposed_string):
+    @staticmethod
+    def group_string_elements(decomposed_string):
         operations = []
         if len(decomposed_string) == 1:
             return [Operation(float(decomposed_string[0]), 0, "+")]
